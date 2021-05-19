@@ -1,4 +1,4 @@
-import { useEffect, useState,createContext } from 'react';
+import { useEffect, useState, createContext, ReactNode, useContext } from 'react';
 import { api } from './services/api';
 
 interface GenreResponseProps {
@@ -70,4 +70,10 @@ export function MoviesProvider({children}:MoviesProviderProps){
       {children}
     </MoviesContext.Provider>
   )
+}
+
+export function useMovies() {
+  const context = useContext(MoviesContext);
+
+  return context
 }

@@ -1,4 +1,9 @@
+import { useMovies } from "../MoviesContext"
+import { Button } from "./Button";
+
 export function SideBar() {
+  const{genres, handleClickButton, selectedGenreId} = useMovies();
+  
   return(
   <nav className="sidebar">
         <span>Watch<p>Me</p></span>
